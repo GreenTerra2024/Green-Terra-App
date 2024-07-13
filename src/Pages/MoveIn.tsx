@@ -1,4 +1,5 @@
 import Container from "../components/Container";
+import Title from "../components/Title";
 
 const MoveIn = () => {
   return (
@@ -6,9 +7,7 @@ const MoveIn = () => {
       {/* Move in or out =========== */}
       <Container >
         <div id="movein" className="card bg-terraGray p-10 w-[420px] sm:w-[700px] h-[200px] ">
-          <span className="text-center font-medium text-xl">
-            Are you moving in or out of your home?
-          </span>
+          <Title>Are you moving in or out of your home?</Title>
           <div className="card-actions justify-center sm:mt-10 mt-6">
             <a href="/" className="btn-gray">No</a>
             <a href="#moveincheckbox" className="btn-pink">Yes</a>

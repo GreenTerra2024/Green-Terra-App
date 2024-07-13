@@ -2,6 +2,7 @@ import "./App.css";
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import FormAddress from "./components/FormAddress";
 import MoveIn from "./Pages/MoveIn";
+import MoveInDetails from "./Pages/MoveInDetails";
 
 
 function App() {
@@ -10,8 +11,8 @@ function App() {
       <Routes>
         <Route path="/" element={<FormAddress />} />
         <Route path="/movein" element={<MoveIn />} />
-        {/* <Route path="/services" element={<div>Services</div>} />
-        <Route path="/workflow" element={<div>Workflow</div>} />
+         <Route path="/moveinDetails" element={<MoveInDetails />} />
+       {/* <Route path="/workflow" element={<div>Workflow</div>} />
         <Route path="/pricing" element={<div>Pricing</div>} /> */}
       </Routes>
     </BrowserRouter>
