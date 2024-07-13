@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: #010101;
+  font-family: "DM Sans", sans-serif;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: center;
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-terraGray to-terraPink text-transparent bg-clip-text;
+}
+
+.btn-pink{
+  display: inline-flex;
+  width: 7rem;
+  height: 3rem;
+  min-height: 3rem;
+  flex-shrink: 0;
+  cursor: pointer;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+  border-radius:  0.5rem;
+  border-color: transparent;
+  background-color: #D566DF;
+  color: #EBF1F6;
+  font-size: 1.1rem;
+}
+.btn-pink:hover{
+  background-color: #d43ee2;
+}
+
+.btn-gray{
+  display: inline-flex;
+  width: 7rem;
+  height: 3rem;
+  min-height: 3rem;
+  flex-shrink: 0;
+  cursor: pointer;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+  border-radius:  0.5rem;
+  border-color: transparent;
+  background-color: #859099;
+  color: #EBF1F6;
+  font-size: 1.1rem;
+}
+.btn-gray:hover{
+  background-color: #6c7a8d;
+}
+
+
+@media (max-width: 620px) {
+  section {
+    max-width: 666px;
+    margin: 0px;  
+  }
+
+  section .card {
+    width: 420px;
+    height: 650px;
+    margin-left: 0px;
+    padding: 0px;
+  }
+
+  .title{
+    display: block;
+    margin-top: 40px;
+  }
+
+  
+}
