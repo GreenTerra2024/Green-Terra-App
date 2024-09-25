@@ -1,9 +1,43 @@
-import Container from "../components/Container";
-import house from "../assets/icons/house.png";
-import Title from "../components/Title";
+import Container from "../../components/Container";
+import house from "../../assets/icons/house.png";
+import Title from "../../components/Title";
 import { BedDouble, Bath, ChevronDown } from "lucide-react";
+import { useState } from "react";
+
 
 const MoveInDetails = () => {
+  const [moveBedroom, setMoveBedroom] = useState(0);
+  const [moveBathroom, setMoveBathroom] = useState(0);
+  const [moveHalfBath, setMoveHalfBath] = useState(0);
+
+const [office, setOffice] = useState(false);
+const [playroom, setPlayroom] = useState(false);
+const [laundryRoom, setLaundryRoom] = useState(false);
+const [familyRoom, setFamilyRoom] = useState(false);
+const [gym, setGym] = useState(false);
+const [notListed, setNotListed] = useState(false);
+
+  // console.log(Bedroom, Bathroom, HalfBath);
+
+  const BedroomDecrement = () => {
+    if (moveBedroom > 0) {
+      setMoveBedroom(prev => prev - 1)
+    }
+  }
+
+  const BathroomDecrement = () => {
+    if (moveBathroom > 0) {
+      setMoveBathroom(prev => prev - 1)
+    }
+  }
+
+  const HalfBathDecrement = () => {
+    if (moveHalfBath > 0) {
+      setMoveHalfBath(prev => prev - 1)
+    }
+  }
+
+
   return (
     <div>
       <Container>
@@ -24,39 +58,39 @@ const MoveInDetails = () => {
             </div>
 
             {/* Count Stats */}
-            <div className="flex justify-between items-center w-full px-4 py-6">
-              <div>
+            <div className="flex justify-between items-center w-full px-4 py-6 ">
+              <div className="w-28">
                 <h2 className="text-center font-medium">Bedroom</h2>
                 <div className="flex gap-2 items-center mt-3">
-                  <button className="bg-terraDarkGray w-8 h-8 rounded-full">
+                  <button onClick={BedroomDecrement} className="bg-terraDarkGray w-8 h-8 rounded-full">
                     -
                   </button>
-                  <span>0</span>
-                  <button className="bg-terraDarkGray w-8 h-8 rounded-full">
+                  <span className="flex items-center justify-center w-10 h-8">{moveBedroom}</span>
+                  <button onClick={() => setMoveBedroom(prev => prev + 1)} className="bg-terraDarkGray w-8 h-8 rounded-full">
                     +
                   </button>
                 </div>
               </div>
-              <div>
+              <div className="w-28">
                 <h2 className="text-center font-medium">Bathroom</h2>
                 <div className="flex gap-2 items-center mt-3">
-                  <button className="bg-terraDarkGray w-8 h-8 rounded-full">
+                  <button onClick={BathroomDecrement} className="bg-terraDarkGray w-8 h-8 rounded-full">
                     -
                   </button>
-                  <span>0</span>
-                  <button className="bg-terraDarkGray w-8 h-8 rounded-full">
+                  <span className="flex items-center justify-center w-10 h-8">{moveBathroom}</span>
+                  <button onClick={() => setMoveBathroom(prev => prev + 1)} className="bg-terraDarkGray w-8 h-8 rounded-full">
                     +
                   </button>
                 </div>
               </div>
-              <div>
+              <div className="w-28">
                 <h2 className="text-center font-medium">Half Bath</h2>
                 <div className="flex gap-2 items-center mt-3">
-                  <button className="bg-terraDarkGray w-8 h-8 rounded-full">
+                  <button onClick={HalfBathDecrement} className="bg-terraDarkGray w-8 h-8 rounded-full">
                     -
                   </button>
-                  <span>0</span>
-                  <button className="bg-terraDarkGray w-8 h-8 rounded-full">
+                  <span className="flex items-center justify-center w-10 h-8">{moveHalfBath}</span>
+                  <button onClick={() => setMoveHalfBath(prev => prev + 1)} className="bg-terraDarkGray w-8 h-8 rounded-full">
                     +
                   </button>
                 </div>
@@ -78,19 +112,19 @@ const MoveInDetails = () => {
               <div className="flex gap-8 justify-center">
                 <div className="flex flex-col gap-2">
                   <div className="flex gap-3">
-                    <input type="checkbox" className="checkbox" />
+                    <input type="checkbox" className="checkbox" onChange={(e) => setOffice(e.target.checked)} />
                     <label className="text-center font-medium text-lg">
                       Office
                     </label>
                   </div>
                   <div className="flex gap-3">
-                    <input type="checkbox" className="checkbox" />
+                    <input type="checkbox" className="checkbox" onChange={(e) => setPlayroom(e.target.checked)} />
                     <label className="text-center font-medium text-lg">
                       Playroom
                     </label>
                   </div>
                   <div className="flex gap-3">
-                    <input type="checkbox" className="checkbox" />
+                    <input type="checkbox" className="checkbox" onChange={(e) => setLaundryRoom(e.target.checked)} />
                     <label className="text-center font-medium text-lg">
                       Laundry Room
                     </label>
@@ -99,19 +133,19 @@ const MoveInDetails = () => {
 
                 <div className="flex flex-col gap-2">
                   <div className="flex gap-3">
-                    <input type="checkbox" className="checkbox" />
+                    <input type="checkbox" className="checkbox" onChange={(e) => setFamilyRoom(e.target.checked)} />
                     <label className="text-center font-medium text-lg">
                       Family Room
                     </label>
                   </div>
                   <div className="flex gap-3">
-                    <input type="checkbox" className="checkbox" />
+                    <input type="checkbox" className="checkbox" onChange={(e) => setGym(e.target.checked)} />
                     <label className="text-center font-medium text-lg">
                       Gym
                     </label>
                   </div>
                   <div className="flex gap-3">
-                    <input type="checkbox" className="checkbox" />
+                    <input type="checkbox" className="checkbox" onChange={(e) => setNotListed(e.target.checked)} />
                     <label className="text-center font-medium text-lg">
                       Not Listed
                     </label>
@@ -125,7 +159,7 @@ const MoveInDetails = () => {
             <a href="/movein" className="btn-gray">
               Back
             </a>
-            <a href="#moveincheckbox" className="btn-pink">
+            <a href="" className="btn-pink">
               Next
             </a>
           </div>

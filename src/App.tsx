@@ -1,8 +1,15 @@
 import "./App.css";
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
-import FormAddress from "./components/FormAddress";
-import MoveIn from "./Pages/MoveIn";
-import MoveInDetails from "./Pages/MoveInDetails";
+import FormAddress from "./Pages/Home/FormAddress";
+import MoveIn from "./Pages/MoveInOut/MoveIn";
+import MoveInDetails from "./Pages/MoveInOut/MoveInDetails";
+import VacationHome from "./Pages/VacationHome";
+import VacationDetails from "./Pages/VacationDetails";
+import CleaningChoiceBox from "./Pages/RegularCleaning/CleaningChoiceBox";
+import BasicCleaning from "./Pages/RegularCleaning/BasicCleaning";
+import BasicCleaningDetails from "./Pages/RegularCleaning/BasicCleaningDetails";
+import BasicCleaningPrice from "./Pages/RegularCleaning/BasicCleaningPrice";
+import BasicCleaningPriceExtra from "./Pages/RegularCleaning/BasicCleaningExtra";
 
 
 function App() {
@@ -12,31 +19,16 @@ function App() {
         <Route path="/" element={<FormAddress />} />
         <Route path="/movein" element={<MoveIn />} />
          <Route path="/moveinDetails" element={<MoveInDetails />} />
-       {/* <Route path="/workflow" element={<div>Workflow</div>} />
-        <Route path="/pricing" element={<div>Pricing</div>} /> */}
+       <Route path="/vacationHome" element={<VacationHome />} />
+        <Route path="/vacationDetails" element={<VacationDetails />} />
+        <Route path="/cleaningChoiceBox" element={<CleaningChoiceBox />} />
+        <Route path="/basicCleaning" element={<BasicCleaning />} />
+        <Route path="/basicCleaningDetails" element={<BasicCleaningDetails />} />
+        <Route path="/basicCleaningPrice" element={<BasicCleaningPrice />} />
+        <Route path="/basicCleaningPriceExtra/:id" element={<BasicCleaningPriceExtra />} />
       </Routes>
     </BrowserRouter>
   );
-
-      {/* <section id="formAddress">
-          <FormAddress />
-      </section> */}
-
-      {/* <section className="text-6xl font-bold" id="about">
-        page 2
-      </section>
-
-      <section className="text-6xl font-bold" id="services">
-        page 3
-      </section>
-
-      <section className="text-6xl font-bold" id="workflow">
-        page 4
-      </section>
-
-      <section className="text-6xl font-bold" id="pricing">
-        page 5
-      </section> */}
    
   
 }

@@ -1,11 +1,23 @@
 import { motion } from "framer-motion";
-// import { useMediaQuery } from "../Hooks/useMediaQuery";
+import React, { useState } from "react";
 import { useMediaQuery } from "@uidotdev/usehooks";
-import Input from "./Input";
-import Container from "../components/Container";
+import Input from "../../components/Input";
+import Container from "../../components/Container";
+import { useNavigate } from "react-router-dom";
+
 
 const FormAddress = () => {
   const isMobile = useMediaQuery("only screen and (max-width : 768px)");
+  const navigate = useNavigate();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [address, setAddress] = useState("");
+  const [phoneCity, setPhoneCity] = useState("");
+  const [state, setState] = useState("");
+  const [zipCode, setZipCode] = useState("");
+  const [sqFootage, setSqFootage] = useState("");
 
   const titleVariants = isMobile
     ? {
@@ -75,6 +87,14 @@ const FormAddress = () => {
         },
       };
 
+      const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        // if (input === "") return;
+         navigate("/movein");
+        console.log(firstName, lastName, email, phoneNumber, address, phoneCity, state, zipCode, sqFootage);
+        
+      }
+
   return (
     <Container>
       {/* Title =========== */}
@@ -101,17 +121,17 @@ const FormAddress = () => {
 
       {/* //FormAddress */}
       <div className="card bg-terraGray p-2 w-[420px] sm:w-[700px]">
-        <form className="card-body items-center text-center w-full ">
+        <form onSubmit={handleSubmit} className="card-body items-center text-center w-full ">
           <div className="flex flex-col sm:flex-row gap-4 w-full mb-2">
             <Input
               type="text"
               placeholder="First Name"
-              onChange={(e) => console.log(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFirstName(e.target.value)}
             />
             <Input
               type="text"
               placeholder="Last Name"
-              onChange={(e) => console.log(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setLastName(e.target.value)}
             />
           </div>
 
@@ -119,12 +139,12 @@ const FormAddress = () => {
             <Input
               type="text"
               placeholder="Email"
-              onChange={(e) => console.log(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
             />
             <Input
               type="text"
               placeholder="Phone Number"
-              onChange={(e) => console.log(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPhoneNumber(e.target.value)}
             />
           </div>
 
@@ -132,12 +152,12 @@ const FormAddress = () => {
             <Input
               type="text"
               placeholder="Address"
-              onChange={(e) => console.log(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAddress(e.target.value)}
             />
             <Input
               type="text"
               placeholder="Phone City"
-              onChange={(e) => console.log(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPhoneCity(e.target.value)}
             />
           </div>
 
@@ -145,17 +165,17 @@ const FormAddress = () => {
             <Input
               type="text"
               placeholder="State"
-              onChange={(e) => console.log(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setState(e.target.value)}
             />
             <Input
               type="text"
               placeholder="Zip Code"
-              onChange={(e) => console.log(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setZipCode(e.target.value)}
             />
             <Input
               type="text"
               placeholder="Sq Footage"
-              onChange={(e) => console.log(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSqFootage(e.target.value)}
             />
           </div>
           <div className="card-actions justify-end mt-6">

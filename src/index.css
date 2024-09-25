@@ -50,6 +50,24 @@ section {
 .btn-pink:hover{
   background-color: #d43ee2;
 }
+.btn-pink-small{
+  display: inline-flex;
+  width: 70px;
+  height: 30px;
+  flex-shrink: 0;
+  cursor: pointer;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+  border-radius:  0.5rem;
+  border-color: transparent;
+  background-color: #D566DF;
+  color: #EBF1F6;
+  font-size: 14px;
+}
+.btn-pink-small:hover{
+  background-color: #d43ee2;
+}
 
 .btn-gray{
   display: inline-flex;
@@ -70,6 +88,7 @@ section {
 .btn-gray:hover{
   background-color: #6c7a8d;
 }
+
 
 
 @media (max-width: 620px) {
