@@ -1,6 +1,6 @@
 import Container from "../../components/Container";
 import Title from "../../components/Title";
-import { cleaningData, extraService } from "../../Ultils/Utils";
+import { cleaningData } from "../../Ultils/Utils";
 import { Link } from "react-router-dom";
 import AmountOfTasks from "../../components/AmountOfTasks";
 import { CleaningDataContext } from "../../CONTEXT/CleaningData";
@@ -10,7 +10,7 @@ import { useContext } from "react";
 const BasicCleaningPrice = () => {
   const context = useContext(CleaningDataContext);
   if (!context) return null;
-  const { fullPrice, discount10, discount25, discount35, extraRoomCart } = context;
+  const { fullPrice, discount10, discount25, discount35 } = context;
 
 
 console.log(fullPrice);

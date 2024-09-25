@@ -10,12 +10,12 @@ const MoveInDetails = () => {
   const [moveBathroom, setMoveBathroom] = useState(0);
   const [moveHalfBath, setMoveHalfBath] = useState(0);
 
-const [office, setOffice] = useState(false);
-const [playroom, setPlayroom] = useState(false);
-const [laundryRoom, setLaundryRoom] = useState(false);
-const [familyRoom, setFamilyRoom] = useState(false);
-const [gym, setGym] = useState(false);
-const [notListed, setNotListed] = useState(false);
+// const [office, setOffice] = useState(false);
+// const [playroom, setPlayroom] = useState(false);
+// const [laundryRoom, setLaundryRoom] = useState(false);
+// const [familyRoom, setFamilyRoom] = useState(false);
+// const [gym, setGym] = useState(false);
+// const [notListed, setNotListed] = useState(false);
 
   // console.log(Bedroom, Bathroom, HalfBath);
 
@@ -108,7 +108,7 @@ const [notListed, setNotListed] = useState(false);
               Are there any other rooms?
               <ChevronDown size={30} className="sm:ml-32 ml-10" />
             </div>
-            <div className="collapse-content">
+            {/* <div className="collapse-content">
               <div className="flex gap-8 justify-center">
                 <div className="flex flex-col gap-2">
                   <div className="flex gap-3">
@@ -152,7 +152,7 @@ const [notListed, setNotListed] = useState(false);
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="card-actions justify-center sm:mt-6 mt-6">

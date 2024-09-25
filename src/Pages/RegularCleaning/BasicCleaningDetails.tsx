@@ -24,13 +24,13 @@ const BasicCleaningDetails = () => {
 
     const addToCart = (item: ExtraRoomProps) => {
       const newCart = [...extraRoomCart,item]
-      setExtraRoomCart(newCart as ExtraRoomProps[]);
+      //setExtraRoomCart(newCart as ExtraRoomProps[]);
     }
     
     const handleRemove = (item: ExtraRoomProps) => {
       if (Array.isArray(extraRoomCart)) {
       const newCart = extraRoomCart.filter((cartItem: ExtraRoomProps) => cartItem.id !== item.id);
-      setExtraRoomCart(newCart);
+      //setExtraRoomCart(newCart);
       }
     };
   

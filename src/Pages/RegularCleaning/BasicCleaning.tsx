@@ -1,6 +1,4 @@
 import Container from "../../components/Container";
-import Title from "../../components/Title";
-import { useState } from "react";
 import outdoor from "../../assets/icons/Outdoor.png";
 
 
